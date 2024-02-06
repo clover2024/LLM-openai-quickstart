@@ -1,60 +1,60 @@
-# OpenAI Quickstart Guide
+# OpenAI 快速入门指南
 
 <p align="center">
-    <br> English | <a href="README-CN.md">中文</a>
+    <br> <a href="README-EN.md">English</a> | 中文
 </p>
 
-This project guides you through the initial steps of developing applications using the OpenAI API. It will help you setup your development environment, understand how to use the API, and provide you with a working Jupyter Lab notebook for interactive development.
+本项目旨在指导你进行使用 OpenAI API 的应用开发的初始步骤。它将帮助你设置开发环境，理解如何使用API，并为你提供一个用于交互式开发的Jupyter Lab记事本。
 
-## Getting Started
+## 开始使用
 
-Here are the steps to get your development environment ready:
+这里是让你的开发环境做好准备的步骤：
 
-### 1. Setting Up Environment Variables
+### 1. 设置环境变量
 
-In order to use the OpenAI API, you need to have an API key which can be obtained from the OpenAI dashboard. Once you have the key, you can set it as an environment variable:
+为了使用OpenAI API，你需要从OpenAI控制台获取一个API密钥。一旦你有了密钥，你可以将其设置为环境变量：
 
-For Unix-based systems (like Ubuntu or MacOS), you can run the following command in your terminal:
+对于基于Unix的系统（如Ubuntu或MacOS），你可以在终端中运行以下命令：
 
 ```bash
-export OPENAI_API_KEY='your-api-key'
+export OPENAI_API_KEY='你的-api-key'
 ```
 
-For Windows, you can use the following command in the Command Prompt:
+对于Windows，你可以在命令提示符中使用以下命令：
 
+```bash
+set OPENAI_API_KEY=你的-api-key
 ```
-set OPENAI_API_KEY=your-api-key
-```
 
-Make sure to replace `'your-api-key'` with your actual OpenAI API key.
+请确保将`'你的-api-key'`替换为你的实际OpenAI API密钥。
 
-### 2. Clone the OpenAI Quickstart Repository
+### 2. 克隆OpenAI快速入门存储库
 
-You can clone the OpenAI Quickstart repository to your local machine using the following command:
+你可以使用以下命令将OpenAI快速入门存储库克隆到你的本地机器上：
 
 ```bash
 git clone https://github.com/DjangoPeng/openai-quickstart.git
 ```
 
-This will create a directory named 'openai-quickstart' in your current directory.
+这将在你的当前目录下创建一个名为'openai-quickstart'的目录。
 
-### 3. Install Jupyter Lab
+### 3. 安装Jupyter Lab
 
-We will be using Jupyter Lab as our interactive development environment. You can install it using pip:
+我们将使用Jupyter Lab作为我们的交互式开发环境。你可以使用pip进行安装：
 
 ```bash
 pip install jupyterlab
 ```
 
-### 4. Start Jupyter Lab
+### 4. 启动Jupyter Lab
 
-Navigate to the 'openai-quickstart' directory and start Jupyter Lab by running the following command:
+导航到'openai-quickstart'目录并通过运行以下命令启动Jupyter Lab：
 
 ```bash
 cd openai-quickstart
 jupyter lab
 ```
 
-This will start Jupyter Lab and open it in your default web browser.
+这将启动Jupyter Lab并在你的默认网络浏览器中打开它。
 
-Now, you are ready to start developing with the OpenAI API!
+现在，你已经准备好开始使用OpenAI API进行开发了！
