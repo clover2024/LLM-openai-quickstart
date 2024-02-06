@@ -169,3 +169,4 @@ langchain/openai-translator/flagged/*
 langchain/openai-translator/flask_temps/*
 
 .env
+openai-translator/config _.yaml
