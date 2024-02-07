@@ -170,3 +170,4 @@ langchain/openai-translator/flask_temps/*
 
 .env
 openai-translator/config _.yaml
+openai-translator/tests/test_translated.md
