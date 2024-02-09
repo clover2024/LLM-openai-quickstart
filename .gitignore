@@ -167,3 +167,7 @@ openai_api/data/fine_food_reviews_with_embeddings_1k_2146.csv
 
 langchain/openai-translator/flagged/*
 langchain/openai-translator/flask_temps/*
+
+.env
+openai-translator/config _.yaml
+openai-translator/tests/test_translated.md

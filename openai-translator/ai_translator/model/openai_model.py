@@ -9,9 +9,9 @@ from utils import LOG
 from openai import OpenAI
 
 class OpenAIModel(Model):
-    def __init__(self, model: str, api_key: str):
+    def __init__(self, model: str, key: str):
         self.model = model
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        self.client = OpenAI(api_key=key)
 
     def make_request(self, prompt):
         attempts = 0
@@ -52,3 +52,4 @@ class OpenAIModel(Model):
             except Exception as e:
                 raise Exception(f"发生了未知错误：{e}")
         return "", False
+
