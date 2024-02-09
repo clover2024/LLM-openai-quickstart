@@ -1,0 +1,13 @@
+OpenAIModel:
+  model: "gpt-3.5-turbo"
+  api_key: 
+  if_use: false # 如果用OpenAI的设置为true，否则就用ChatGLM的
+
+GLMModel:
+  model: "glm-4"
+  api_key:  # https://open.bigmodel.cn/usercenter/apikeys
+
+common:
+  book: "tests/test.pdf"
+  file_format: "markdown"
+  target_language: "法语"
