@@ -22,7 +22,9 @@ def translation():
         LOG.debug(f"[input_file.filename]\n{input_file.filename}")
 
         if input_file and input_file.filename:
-            # # 创建临时文件
+            # # 创建临时文件，这里需要判断一下有没有临时文件夹
+            if not os.path.exists(TEMP_FILE_DIR):
+                os.makedirs(TEMP_FILE_DIR)
             input_file_path = TEMP_FILE_DIR+input_file.filename
             LOG.debug(f"[input_file_path]\n{input_file_path}")
 
@@ -68,4 +70,4 @@ if __name__ == "__main__":
     # 初始化 translator
     initialize_translator()
     # 启动 Flask Web Server
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="127.0.0.1", port=5000, debug=True)
