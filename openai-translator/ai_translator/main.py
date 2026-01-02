@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     # model_name = args.openai_model if args.openai_model else config['OpenAIModel']['model']
     # api_key = args.openai_api_key if args.openai_api_key else config['OpenAIModel']['api_key']
-    config_loader = ConfigLoader("openai-translator/config _.yaml")
+    config_loader = ConfigLoader("openai-translator/config.yaml")
     config = config_loader.load_config()
 
     if config['OpenAIModel']['if_use']:

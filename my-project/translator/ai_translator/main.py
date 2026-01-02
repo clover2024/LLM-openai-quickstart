@@ -4,7 +4,7 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from utils import ArgumentParser, ConfigLoader, LOG
-from model import GLMModel, OpenAIModel
+from model import GLMModel, OpenAIModel, DeepSeekModel
 from translator import PDFTranslator
 
 if __name__ == "__main__":
@@ -17,6 +17,10 @@ if __name__ == "__main__":
         api_key = config['OpenAIModel']['api_key']
         model_name = config['OpenAIModel']['model']
         model = OpenAIModel(model=model_name, key=api_key)
+    elif config['DeepSeekModel']['if_use']:
+        api_key = config['DeepSeekModel']['api_key']
+        model_name = config['DeepSeekModel']['model']
+        model = DeepSeekModel(model=model_name, key=api_key)
     else:
         api_key = config['GLMModel']['api_key']
         model_name = config['GLMModel']['model']

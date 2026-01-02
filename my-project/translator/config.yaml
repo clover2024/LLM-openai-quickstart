@@ -7,6 +7,11 @@ GLMModel:
   model: "glm-4"
   api_key:  # https://open.bigmodel.cn/usercenter/apikeys
 
+DeepSeekModel:
+  model: "deepseek-chat"
+  api_key:
+  if_use: true # 如果用DeepSeek的设置为true，否则就用ChatGLM的
+
 common:
   book: "tests/test.pdf"
   file_format: "markdown"
