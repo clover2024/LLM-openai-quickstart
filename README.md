@@ -1,7 +1,15 @@
-# OpenAI 快速入门
+# 大模型（LLMs）应用开发快速入门指南
+
+![GitHub stars](https://img.shields.io/github/stars/DjangoPeng/openai-quickstart?style=social)
+![GitHub forks](https://img.shields.io/github/forks/DjangoPeng/openai-quickstart?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/DjangoPeng/openai-quickstart?style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/DjangoPeng/openai-quickstart)
+![GitHub language count](https://img.shields.io/github/languages/count/DjangoPeng/openai-quickstart)
+![GitHub top language](https://img.shields.io/github/languages/top/DjangoPeng/openai-quickstart)
+![GitHub last commit](https://img.shields.io/github/last-commit/DjangoPeng/openai-quickstart?color=red)
 
 <p align="center">
-    <br> <a href="README-EN.md">English</a> | 中文
+    <br> <a href="README-en.md">English</a> | 中文
 </p>
 
 
@@ -17,7 +25,8 @@
 
 - **LLM技术栈与生态**：数据隐私与法律合规性，GPU技术选型指南，Hugging Face快速入门指南，ChatGLM的使用。
 
-## 入门
+=======
+## 拉取代码
 
 你可以通过克隆此仓库到你的本地机器来开始：
 
@@ -50,6 +59,75 @@ Writing default config to: /root/.jupyter/jupyter_lab_config.py
 ```python
 # 非 root 用户启动，无需修改
 c.ServerApp.allow_root = True
+
+## 搭建开发环境
+
+本项目使用 Python v3.10 开发，完整 Python 依赖软件包见[requirements.txt](requirements.txt)。
+
+关键依赖的官方文档如下：
+
+- Python 环境管理 [Miniconda](https://docs.conda.io/projects/miniconda/en/latest/)
+- Python 交互式开发环境 [Jupyter Lab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html)
+- 大模型应用开发框架 [LangChain](https://python.langchain.com/docs/get_started/installation)
+- [OpenAI Python SDK ](https://github.com/openai/openai-python?tab=readme-ov-file#installation) 
+
+
+**以下是详细的安装指导（以 Ubuntu 操作系统为例）**：
+
+### 安装 Miniconda
+
+```shell
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+```
+
+安装完成后，建议新建一个 Python 虚拟环境，命名为 `langchain`。
+
+```shell
+conda create -n langchain python=3.10
+
+# 激活环境
+conda activate langchain 
+```
+
+之后每次使用需要激活此环境。
+
+
+### 安装 Python 依赖软件包
+
+```shell
+pip install -r requirements.txt
+```
+
+### 配置 OpenAI API Key
+
+根据你使用的命令行工具，在 `~/.bashrc` 或 `~/.zshrc` 中配置 `OPENAI_API_KEY` 环境变量：
+
+```shell
+export OPENAI_API_KEY="xxxx"
+```
+
+### 安装和配置 Jupyter Lab
+
+上述开发环境安装完成后，使用 Miniconda 安装 Jupyter Lab：
+
+```shell
+conda install -c conda-forge jupyterlab
+```
+
+使用 Jupyter Lab 开发的最佳实践是后台常驻，下面是相关配置（以 root 用户为例）：
+
+```shell
+# 生成 Jupyter Lab 配置文件，
+jupyter lab --generate-config
+```
+
+打开上面执行输出的`jupyter_lab_config.py`配置文件后，修改以下配置项：
+
+```python
+c.ServerApp.allow_root = True # 非 root 用户启动，无需修改
 c.ServerApp.ip = '*'
 ```
 
@@ -81,6 +159,9 @@ Jupyter Lab 输出的日志将会保存在 `nohup.out` 文件（已在 .gitignor
 | 第14节  | 大模型时代的开源与数据协议 <br/> - 什么是开源？ <br/> - 广泛使用的开源协议和数据协议 <br/> - Llama 是不是伪开源？ <br/> - ChatGLM2-6B 的开源协议 <br/> 大语言模型的可解释性 <br/> - 提高模型决策过程的透明度 <br/> - Stanford Alpaca 的相关研究 <br/> 大语言模型应用的法规合规性 <br/> - 中国大陆：生成式人工智能服务备案 <br/> - 国际化：数据隐私与保护（以 GDPR 为例） <br/> - 企业合规性应对要点 | | |
 | 第15节  | 大模型时代的Github：Hugging Face <br/> - Hugging Face 是什么？ <br/> - Hugging Face Transformers 库 <br/> - Hugging Face 开源社区：Models, Datasets, Spaces, Docs <br/> - 大模型横向对比 <br/> - Open LLM Leaderboard（大模型天梯榜） <br/> 显卡选型推荐指南 <br/> - GPU vs 显卡 <br/> - GPU Core vs AMD CU <br/> - CUDA Core vs Tensor Core <br/> - N卡的架构变迁 <br/> - 显卡性能天梯榜 | | |
 | 第16节  | 清华 GLM 大模型家族 <br/> - 最强基座模型 GLM-130B  <br/> - 增强对话能力 ChatGLM <br/> - 开源聊天模型 ChatGLM2-6B <br/> - 联网检索能力 WebGLM <br/> - 初探多模态 VisualGLM-6B <br/> - 代码生成模型 CodeGeex2 <br/> ChatGLM2-6B 大模型应用开发 <br/> - ChatGLM2-6B 私有化部署 <br/> - HF Transformers Tokenizer <br/> - HF Transformers Model <br/> - 将模型同步至 Hugging Face <br/> - 使用 Gradio 赋能 ChatGLM2-6B 图形化界面 <
+## 课程大纲
+
+完整文档请移步：[大模型（LLMs）应用开发快速入门指南课程大纲](docs/schedule.md#课程表)
 
 
 ## 贡献
@@ -99,3 +180,12 @@ Django Peng - pjt73651@email.com
 
 项目链接: https://github.com/DjangoPeng/openai-quickstart
 
+## ⭐️⭐️
+
+<a href="https://star-history.com/#DjangoPeng/openai-quickstart&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=DjangoPeng/openai-quickstart&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=DjangoPeng/openai-quickstart&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=DjangoPeng/openai-quickstart&type=Date" />
+  </picture>
+</a>
