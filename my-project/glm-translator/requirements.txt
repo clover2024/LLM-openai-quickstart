@@ -1,0 +1,15 @@
+pdfplumber
+simplejson
+requests
+PyYAML
+pillow
+reportlab
+pandas
+loguru
+openai
+langchain
+langchain_community
+gradio
+flask
+torch 
+sentencepiece

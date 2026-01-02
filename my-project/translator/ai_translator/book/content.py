@@ -1,9 +1,7 @@
 import pandas as pd
-
 from enum import Enum, auto
 from PIL import Image as PILImage
 from utils import LOG
-from io import StringIO
 
 class ContentType(Enum):
     TEXT = auto()
@@ -32,9 +30,6 @@ class Content:
             return True
         return False
 
-    def __str__(self):
-        return self.original
-
 
 class TableContent(Content):
     def __init__(self, data, translation=None):
@@ -50,7 +45,6 @@ class TableContent(Content):
         try:
             if not isinstance(translation, str):
                 raise ValueError(f"Invalid translation type. Expected str, but got {type(translation)}")
-
             LOG.debug(f"[translation]\n{translation}")
             # Extract column names from the first set of brackets
             header = translation.split(']')[0][1:].split(', ')

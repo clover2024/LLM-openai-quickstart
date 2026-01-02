@@ -43,7 +43,7 @@ class PDFParser:
 
                     text_content = Content(content_type=ContentType.TEXT, original=cleaned_raw_text)
                     page.add_content(text_content)
-                    LOG.debug(f"[raw_text]\n {cleaned_raw_text}")
+                    LOG.debug(f"[raw_text 没有表格的纯文本：]\n {cleaned_raw_text}")
 
 
 
@@ -51,7 +51,7 @@ class PDFParser:
                 if tables:
                     table = TableContent(tables)
                     page.add_content(table)
-                    LOG.debug(f"[table]\n{table}")
+                    LOG.debug(f"[table] 提取出表格部分：\n{table}")
 
                 book.add_page(page)
 
