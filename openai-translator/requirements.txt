@@ -7,3 +7,5 @@ pillow
 reportlab
 pandas
 loguru
+openai
+zhipuai

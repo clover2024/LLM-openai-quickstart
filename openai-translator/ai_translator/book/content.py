@@ -51,6 +51,7 @@ class TableContent(Content):
             table_data = [row.strip().split() for row in translation.strip().split('\n')]
             LOG.debug(table_data)
             # Create a DataFrame from the table_data
+            # FIXME 
             translated_df = pd.DataFrame(table_data[1:], columns=table_data[0])
             LOG.debug(translated_df)
             self.translation = translated_df
